@@ -7,7 +7,7 @@ export default {
   components: {
     HeaderLogo,
     SearchIcon,
-    HeartIcon,
+    HeartIcon
   },
   data() {
     return {
@@ -16,10 +16,10 @@ export default {
   },
   methods: {
     search() {
-      if (this.query !== ''){
+      if (this.query !== '') {
         this.$router.push({ path: '/search', query: { q: this.query } })
         // location.reload();
-      } 
+      }
     }
   }
 }
@@ -101,5 +101,10 @@ button {
   padding-right: 39px;
   border: none;
   background-color: transparent;
+}
+@media screen and (max-width: 628px) {
+  .input-con {
+    width: 80%;
+  }
 }
 </style>
