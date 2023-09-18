@@ -133,4 +133,19 @@ span {
   background: #fff200;
   box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.25);
 }
+
+@media screen and (max-width: 628px) {
+    .name {
+        font-size: 18px;
+    }
+    .username {
+        font-size: 12px;
+    }
+    .download {
+        font-size: 14px;
+    }
+    .icon {
+        width: 15px;
+    }
+}
 </style>

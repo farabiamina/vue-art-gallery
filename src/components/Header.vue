@@ -51,7 +51,7 @@ header {
   background-color: #000;
 }
 .logo {
-  width: 13%;
+  width: 15%;
   min-width: 110px;
   cursor: pointer;
 }

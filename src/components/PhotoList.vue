@@ -53,12 +53,19 @@ export default {
 }
 
 .photo-item {
-  width: 30%;
+  width: calc(100%/3 - 40px/3);
   height: 0;
   padding-bottom: 25%;
   overflow: hidden;
   background-size: cover;
   background-position: center;
   cursor: pointer;
+}
+
+@media screen and (max-width: 628px) {
+  .photo-item {
+    width: 100%;
+    padding-bottom: 80%;
+  }
 }
 </style>

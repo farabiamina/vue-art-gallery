@@ -180,6 +180,5 @@ export default {
 <style>
 .observer {
   height: 10px;
-  background-color: rebeccapurple;
 }
 </style>

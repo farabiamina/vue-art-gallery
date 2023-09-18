@@ -23,3 +23,18 @@
 button {
   cursor: pointer;
 }
+
+@media screen and (max-width: 840px) {
+  .inner {
+    width: 90%;
+  }
+  input {
+    padding: 10px;
+  }
+}
+
+@media screen and (max-width: 628px) {
+  .inner {
+    width: calc(100% - 40px);
+  }
+}

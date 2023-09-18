@@ -1,7 +1,7 @@
 <template>
   <MiniHeader />
   <main>
-    <h2>Избранное</h2>
+    <h1>Избранное</h1>
     <PhotoList :list="$store.getters.getLikedPhotos" :isLoading="false" :isError="false" />
   </main>
 </template>
@@ -30,4 +30,13 @@ export default {
 }
 </script>
 
-<style></style>
+<style>
+h1 {
+    margin: 0 auto;
+    text-align: center;
+    padding-top: 50px;
+}
+.photo-list {
+    padding-top: 50px;
+}
+</style>
