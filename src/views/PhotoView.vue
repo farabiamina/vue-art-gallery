@@ -1,6 +1,8 @@
 <template>
   <MiniHeader />
-  <main>
+  <Spinner v-if="isLoading" />
+  <span v-else-if="isError">Error: {{ error.message }}</span>
+  <main v-else>
     <div class="bg" :style="`background-image: url('${photo.urls.regular}');`"></div>
     <div class="inner">
       <div class="info">
@@ -24,11 +26,12 @@
 import { useGetPhotoQuery } from '../queries/PhotosApi'
 import MiniHeader from '../components/MiniHeader.vue'
 import HeartIcon from '@/components/icons/IconHeart.vue'
-
+import Spinner from '@/components/icons/IconSpinner.vue'
 export default {
   components: {
     HeartIcon,
-    MiniHeader
+    MiniHeader,
+    Spinner
   },
   data() {
     return {
@@ -135,17 +138,17 @@ span {
 }
 
 @media screen and (max-width: 628px) {
-    .name {
-        font-size: 18px;
-    }
-    .username {
-        font-size: 12px;
-    }
-    .download {
-        font-size: 14px;
-    }
-    .icon {
-        width: 15px;
-    }
+  .name {
+    font-size: 18px;
+  }
+  .username {
+    font-size: 12px;
+  }
+  .download {
+    font-size: 14px;
+  }
+  .icon {
+    width: 15px;
+  }
 }
 </style>
