@@ -10,7 +10,7 @@
         </div>
         <div class="btns">
           <button class="fav" @click="toggleLike">
-            <HeartIcon class="icon" :fillColor="liked ? 'red' : 'black'" />
+            <HeartIcon class="icon" :fillColor="isLiked ? 'red' : 'black'" />
           </button>
           <button class="download">Download</button>
         </div>
@@ -36,7 +36,7 @@ export default {
       isLoading: false,
       isError: false,
       error: null,
-      liked: false,
+      isLiked: false
     }
   },
   computed: {
@@ -44,7 +44,7 @@ export default {
       return this.$route.params.id
     },
     isLiked() {
-      return this.$store.getters['favorites/getLikedPhotos'].some((p) => p.id === this.photo.id)
+      return this.$store.getters.getLikedPhotos.some((p) => p.id === this.photo.id)
     }
   },
   created() {
@@ -56,8 +56,8 @@ export default {
   },
   methods: {
     toggleLike() {
-      this.liked = !this.liked
-      this.$store.dispatch('favorites/toggleLike', this.photo)
+      this.isLiked = !this.isLiked
+      this.$store.dispatch('toggleLike', this.photo)
     }
   }
 }
